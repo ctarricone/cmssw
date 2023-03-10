@@ -483,31 +483,28 @@ void BtlLocalRecoValidation::analyze(const edm::Event& iEvent, const edm::EventS
         if (matchClu && comp != nullptr) {
           meCluLocalXRes_->Fill(xlocal_res);
           meCluLocalYRes_->Fill(ylocal_res);
-         	if (global_point.z()>0){ 
-         	  meCluLocalYResZGlobPlus_->Fill(ylocal_res);
-	           meCluLocalYPullZGlobPlus_->Fill(ylocal_res / std::sqrt(comp->localPositionError().yy()));
+         if (global_point.z()>0){ 
+            meCluLocalYResZGlobPlus_->Fill(ylocal_res);
+	    meCluLocalYPullZGlobPlus_->Fill(ylocal_res / std::sqrt(comp->localPositionError().yy()));
           }else{
        	    meCluLocalYResZGlobMinus_->Fill(ylocal_res);
-	           meCluLocalYPullZGlobMinus_->Fill(ylocal_res / std::sqrt(comp->localPositionError().yy()));
-	         }
-	         if(cluster.size()==1){
-	           meCluSingCrystalLocalYRes_->Fill(ylocal_res);
+	    meCluLocalYPullZGlobMinus_->Fill(ylocal_res / std::sqrt(comp->localPositionError().yy()));
+	  }
+	  if(cluster.size()==1){
+	    meCluSingCrystalLocalYRes_->Fill(ylocal_res);
             if (global_point.z()>0){ 
               meCluSingCrystalLocalYResZGlobPlus_->Fill(ylocal_res);
             }else{
               meCluSingCrystalLocalYResZGlobMinus_->Fill(ylocal_res);
             }
-
-
           }else{
             if(cluster.size()>1){
               meCluMultiCrystalLocalYRes_->Fill(ylocal_res);
               if (global_point.z()>0){ 
-		              meCluMultiCrystalLocalYResZGlobPlus_->Fill(ylocal_res);
-	             }else{
+                 meCluMultiCrystalLocalYResZGlobPlus_->Fill(ylocal_res);
+              }else{
                 meCluMultiCrystalLocalYResZGlobMinus_->Fill(ylocal_res);
               }
-
           }
           if(abs(global_point.eta())<0.3){
              meCluCentralLocalYRes_->Fill(ylocal_res);
