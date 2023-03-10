@@ -505,6 +505,7 @@ void BtlLocalRecoValidation::analyze(const edm::Event& iEvent, const edm::EventS
               }else{
                 meCluMultiCrystalLocalYResZGlobMinus_->Fill(ylocal_res);
               }
+	    }
           }
           if(abs(global_point.eta())<0.3){
              meCluCentralLocalYRes_->Fill(ylocal_res);
