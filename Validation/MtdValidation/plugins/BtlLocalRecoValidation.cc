@@ -792,6 +792,9 @@ void BtlLocalRecoValidation::bookHistograms(DQMStore::IBooker& ibook,
 
   meCluLocalYResZGlobPlus_ =
       ibook.book1D("BtlCluLocalYResZGlobPlus", "BTL cluster local Y resolution (glob Z > 0);Y_{RECO}-Y_{SIM} [cm]", 100, -0.2, 0.2);
+  meCluLocalYResZGlobMinus_ =
+      ibook.book1D("BtlCluLocalYResZGlobMinus", "BTL cluster local Y resolution (glob Z < 0);Y_{RECO}-Y_{SIM} [cm]", 100, -0.2, 0.2);
+
   meCluSingCrystalLocalYRes_ =
       ibook.book1D("BtlCluSingCrystalLocalYRes", "BTL cluster local Y resolution (single Crystal clusters);Y_{RECO}-Y_{SIM} [cm]", 100, -0.2, 0.2);
   meCluSingCrystalLocalYResZGlobPlus_ =
