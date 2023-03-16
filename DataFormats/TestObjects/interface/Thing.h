@@ -2,7 +2,7 @@
 #define DataFormats_TestObjects_Thing_h
 
 #include "FWCore/Utilities/interface/typedefs.h"
-
+//TESTING COMMIT
 namespace edmtest {
 
   struct Thing {
